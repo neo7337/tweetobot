@@ -1,7 +1,8 @@
 var debug = false;
 var Twit = require('twit')
 var T = new Twit(require('./config.js'))
-var tweet = require('./tweets.js')
+const fs = require('fs')
+let tweet = JSON.parse(fs.readFileSync('tweets.json', 'utf-8'))
 
 T.get('account/verify_credentials', {
     include_entities: false,
@@ -14,18 +15,16 @@ function onAuthenticated(err, res) {
     }
     console.log('Authentication Successfull. Bot Running...\r\n')
 }
-
-var hashtag = { q: '#avengers#endgame#marvel', count: 10, result_type: 'recent' }
-
 //tweeting a fresh tweet 
 function tweeter() {
-    T.post('statuses/update', { status: tweet.tweetsToMake }, tweeted)
-    console.log('testing the tweetobot')
+    var randomNumber = Math.floor(Math.random() * 5) + 1;
+    T.post('statuses/update', { status: tweet["tweetMessages"][randomNumber].message }, tweeted)
+    console.log('tweet tweeted')
 }
 
 //retweeting the latest tweet with the given hashtags
 function retweetLatest() {
-    T.get('search/tweets', tweet.retweetsToMake, function (error, data) {
+    T.get('search/tweets', tweet["retweetMessage"], function (error, data) {
         var tweets = data.statuses
         if (undefined !== tweets) {
             for (var i = 0; i < tweets.length; i++) {
@@ -55,7 +54,7 @@ function tweeted(err, reply) {
 }
 
 tweeter()
-setInterval(tweeter, 1000 * 40)
+setInterval(tweeter, 1000 * 10)
 
 retweetLatest()
 setInterval(retweetLatest, 1000 * 10)

@@ -9,6 +9,7 @@
   "author": "aditya",
   "license": "ISC",
   "dependencies": {
-    "twit": "2.2.11"
+    "twit": "2.2.11",
+    "fs": "0.0.2"
   }
 }

@@ -1,0 +1,24 @@
+{
+    "tweetMessages": [
+        {
+            "message": "Welcome to the tweetobot"
+        },
+        {
+            "message": "posting tweets on twitter automatically"
+        },
+        {
+            "message": "Welcome to the tweetobot1"
+        },
+        {
+            "message": "posting tweets on twitter automatically2"
+        },
+        {
+            "message": "Welcome to the tweetobot3"
+        }
+    ],
+    "retweetMessage": {
+        "q": "#google",
+        "count": 10,
+        "result_type": "recent"
+    }
+}
