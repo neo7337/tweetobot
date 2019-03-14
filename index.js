@@ -50,7 +50,7 @@ function tweetthetweet() {
 function tweeter(twt) {
     if (undefined !== twt) {
         console.log(twt + tweet["geekhashtags"].tags)
-        T.post('statuses/update', { status: twt + tweet["geekhashtags"] }, tweeted);
+        T.post('statuses/update', { status: twt + tweet["geekhashtags"].tags }, tweeted);
         console.log("tweet of the day tweeted.");
     } else {
         var randomNumber = Math.floor(Math.random() * 5) + 1;
