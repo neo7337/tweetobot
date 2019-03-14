@@ -20,5 +20,8 @@
         "q": "#google",
         "count": 10,
         "result_type": "recent"
+    },
+    "geekhashtags": {
+        "tags": "#geeks @iamdeveloper #devjokes #iamdeveloper"
     }
 }
