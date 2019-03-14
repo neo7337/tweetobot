@@ -1,11 +1,12 @@
-var debug = false;
+var express = require('express');
+var app = express();
 var Twit = require('twit')
 var T = new Twit(require('./config.js'))
 const fs = require('fs')
 var request = require("request");
 let tweet = JSON.parse(fs.readFileSync('tweets.json', 'utf-8'))
 
-var port_number = server.listen(process.env.PORT || 3000);
+var port_number = process.env.PORT || 3000;
 
 T.get('account/verify_credentials', {
     include_entities: false,
@@ -101,3 +102,4 @@ setInterval(retweetLatest, 1000 * 10)
 tweetthetweet()
 setInterval(tweetthetweet, 1000 * 60 * 60 * 24)
 app.listen(port_number);
+console.log('Server running at Port ' + port_number);

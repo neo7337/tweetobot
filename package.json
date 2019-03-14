@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "twit": "2.2.11",
-    "fs": "0.0.2"
+    "fs": "0.0.2",
+    "express": "~4.15.5"
   }
 }

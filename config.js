@@ -1,6 +1,6 @@
 module.exports = {
-    consumer_key: process.env.KEY_C,
-    consumer_secret: process.env.KEY_S,
-    access_token: process.env.AT,
-    access_token_secret: process.env.ATS
+    consumer_key: 'cpXV3biB6eVugqfpImYh4HebR',
+    consumer_secret: 'zvnknAui7xih8CeetgqIYSlQsAiGYYRSipqc950AhEij6XZctk',
+    access_token: '2453369558-zbbD2wH0Ei1iQUgCir0k0SOM3OGk36tqnliKACV',
+    access_token_secret: 'ZtxCRsmjRBaxB9khh6oPoaXvNmSL91x5hDU1DlzzJYVsz'
 }
